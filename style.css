@@ -1,0 +1,18 @@
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef2ff;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }

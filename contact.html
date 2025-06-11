@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Send Email</title>
+    <link rel="stylesheet" href="style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f5f9ff;
+            padding: 20px;
+        }
+
+            .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+
+        .form-section {
+            padding: 40px 50px 30px;
+            width: 550px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form-section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #16164d;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-size: 0.9rem;
+            font-weight: 500;
+            width: 100%;
+            padding: 8px;
+            color: #333;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .send-btn {
+            color: white;
+            background: linear-gradient(to right, #4776E6 0%, #7f47e6 100%);
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3461ca;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 shadow bg-white fixed top-0 w-full z-50">
+    <div class="flex items-center space-x-3">
+      <i class="fa-solid fa-robot"></i>
+      <span class="text-xl font-bold">LexiBot</span>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-medium text-lg">
+      <li><a href="index.html" class="hover:text-red-500">Home</a></li>
+      <li><a href="loading-page.html" class="hover:text-red-500">Staff</a></li>
+      <li><a href="loading-page - supporto.html" class="hover:text-red-500">Support</a></li>
+      <li><a href="blog.html" class="hover:text-red-500">Blog</a></li>
+      <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" rel="noreferrer noopener" target="_blank" class="hover:text-red-500">Aggiungi bot</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="dropdown" class="mobile-menu md:hidden bg-white w-full text-center space-y-4 p-4 shadow">
+    <a href="#home" class="block">Home</a>
+    <a href="#staff" class="block">Staff</a>
+    <a href="#blog" class="block">Blog</a>
+    <a href="#collabs" class="block">Aggiungi bot</a>
+  </div> 
+    <div class="form-section">
+        <h2>Hi, Friend!</h2>
+        <p>Welcome to our Email Sender form!</p>
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="user_email">Your Email:</label>
+                <input type="email" id="user_email" name="user_email" required placeholder="YourEmail@example.com">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject (include your email):</label>
+                <input type="text" id="subject" name="subject" required placeholder="Subject - YourEmail@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+            </div>
+            <button type="submit" class="send-btn">Send Email</button>
+            <p class="result" id="resultMsg">Email sent successfully.</p>
+        </form>
+    </div><br>
+
+  <footer class="bg-[#1a1a1d] text-gray-300 py-12 px-6" style="background: #1a1a1d;">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm" >
+    <!-- Info -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Info</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Server di Supporto</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" class="hover:text-white transition" rel="noopener noreferrer" target="_blank">Invita bot</a></li>
+        <li><a href="loading-page.html" class="hover:text-white transition">Staff</a></li>
+        <li><a href="tds.html" class="hover:text-white transition">Termini di Servizio</a></li>
+      </ul>
+    </div>
+
+    <!-- Other -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Other</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+        <li><a href="loading-page.html" class="hover:text-white transition">Staff</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" class="hover:text-white transition">aggiungi bot</a></li>
+        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Utility -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Sito sviluppato da:</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Tahmid</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+    &copy; LexiBot 2025
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const dropdown = document.getElementById('dropdown');
+
+    menuBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+      anime({ targets: '#dropdown', opacity: [0, 1], duration: 300, easing: 'easeInOutQuad' });
+    });
+
+    // Scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Animate Aggiungi Bot Button
+    anime({
+      targets: '#addBotBtn',
+      translateY: [-30, 0],
+      opacity: [0, 1],
+      delay: 500,
+      duration: 1000,
+      easing: 'easeOutElastic(1, .8)'
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("OqhKxZoqgeKLSsIuI"); 
+
+        const form = document.getElementById('emailForm');
+        const resultMsg = document.getElementById('resultMsg');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const userEmail = document.getElementById("user_email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            emailjs.send("service_4km3zby", "template_yjx7efc", {
+                from_email: userEmail,
+                subject: subject,
+                message: message
+            }).then(function () {
+                resultMsg.textContent = "✅ Email sent successfully!";
+                resultMsg.style.color = "green";
+                resultMsg.style.opacity = 1;
+                form.reset();
+            }, function (error) {
+                resultMsg.textContent = "❌ Failed to send email. Try again.";
+                resultMsg.style.color = "red";
+                resultMsg.style.opacity = 1;
+                console.error("EmailJS Error:", error);
+            });
+        });
+    </script>
+</body>
+
+</html>

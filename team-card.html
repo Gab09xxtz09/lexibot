@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Staff</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome (Optional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    .team-card {
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s ease;
+      height: 340px;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .team-card:hover .overlay {
+      opacity: 1;
+    }
+    .team-card img {
+      transition: transform 0.5s ease;
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <section class="container py-5">
+    <h2 class="text-center text-4xl font-bold mb-10 text-gray-800" data-aos="fade-up">Meet Our Staff</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="Jane Doe">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">Jane Doe</h4>
+            <p class="text-sm">Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="John Smith">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">John Smith</h4>
+            <p class="text-sm">Backend Engineer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="Anna Lee">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">Anna Lee</h4>
+            <p class="text-sm">UI/UX Designer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards if needed -->
+
+    </div>
+  </section>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        anime({
+          targets: card.querySelector('.overlay h4'),
+          translateY: [-20, 0],
+          opacity: [0, 1],
+          duration: 500,
+          easing: 'easeOutExpo'
+        });
+        anime({
+          targets: card.querySelector('.overlay p'),
+          translateY: [20, 0],
+          opacity: [0, 1],
+          delay: 150,
+          duration: 500,
+          easing: 'easeOutExpo'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Staff</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    body {
+        font-family: font-family: 'Segoe UI', sans-serif;;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    .team-card {
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s ease;
+      height: 340px;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .team-card:hover .overlay {
+      opacity: 1;
+    }
+    .team-card img {
+      transition: transform 0.5s ease;
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+      <nav class="flex items-center justify-between px-6 py-4 shadow bg-white fixed top-0 w-full z-50">
+    <div class="flex items-center space-x-3">
+      <i class="fa-solid fa-robot"></i>
+      <span class="text-xl font-bold">LexiBot</span>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-medium text-lg">
+      <li><a href="index.html" class="hover:text-red-500">Home</a></li>
+      <li><a href="loading-page.html" class="hover:text-red-500">Staff</a></li>
+      <li><a href="contact.html" class="hover:text-red-500">Support</a></li>
+      <li><a href="blog.html" class="hover:text-red-500">Blog</a></li>
+      <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" rel="noreferrer noopener" target="_blank" class="hover:text-red-500">Aggiungi bot</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="dropdown" class="mobile-menu md:hidden bg-white w-full text-center space-y-4 p-4 shadow">
+    <a href="#home" class="block">Home</a>
+    <a href="#staff" class="block">Staff</a>
+    <a href="#blog" class="block">Blog</a>
+    <a href="#collabs" class="block">Aggiungi bot</a>
+  </div><br>
+
+  <section class="container py-5">
+    <h2 class="text-center text-4xl font-bold mb-10 text-gray-800" data-aos="fade-up">Meet Our Staff</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="Logodelbotlesbico.png" class="w-full h-full object-cover" alt="gab09xtxz">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">gab09xtxz</h4>
+            <p class="text-sm">CEO & Developer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="Logodelbotlesbico.png" class="w-full h-full object-cover" alt="MrFrancesco">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">MrFrancesco</h4>
+            <p class="text-sm">staff administrator</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-card rounded-xl shadow-lg overflow-hidden relative bg-white">
+          <img src="Logodelbotlesbico.png" class="w-full h-full object-cover" alt="AleBolaa">
+          <div class="overlay text-center px-3">
+            <h4 class="text-2xl font-bold mb-2">AleBolaa</h4>
+            <p class="text-sm">Staff Team</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+  <button onclick="scrollToTop()" class="back-to-top bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+
+
+
+
+  <footer class="bg-[#1a1a1d] text-gray-300 py-12 px-6" style="background: #1a1a1d;">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm" >
+    <!-- Info -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Info</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Server di Supporto</a></li>
+        <li><a href="#" class="hover:text-white transition">Invita bot</a></li>
+        <li><a href="#" class="hover:text-white transition">Staff</a></li>
+        <li><a href="#" class="hover:text-white transition">Termini di Servizio</a></li>
+      </ul>
+    </div>
+
+    <!-- Other -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Other</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+        <li><a href="#" class="hover:text-white transition">Staff</a></li>
+        <li><a href="#" class="hover:text-white transition">aggiungi bot</a></li>
+        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Utility -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Sito sviluppato da:</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Tahmid</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+    &copy; LexiBot 2025
+  </div>
+</footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        anime({
+          targets: card.querySelector('.overlay h4'),
+          translateY: [-20, 0],
+          opacity: [0, 1],
+          duration: 500,
+          easing: 'easeOutExpo'
+        });
+        anime({
+          targets: card.querySelector('.overlay p'),
+          translateY: [20, 0],
+          opacity: [0, 1],
+          delay: 150,
+          duration: 500,
+          easing: 'easeOutExpo'
+        });
+      });
+    });
+  </script>
+  <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const dropdown = document.getElementById('dropdown');
+
+    menuBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+      anime({ targets: '#dropdown', opacity: [0, 1], duration: 300, easing: 'easeInOutQuad' });
+    });
+
+    // Scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Animate Aggiungi Bot Button
+    anime({
+      targets: '#addBotBtn',
+      translateY: [-30, 0],
+      opacity: [0, 1],
+      delay: 500,
+      duration: 1000,
+      easing: 'easeOutElastic(1, .8)'
+    });
+  </script>
+</body>
+</html>

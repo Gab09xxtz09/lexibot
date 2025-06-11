@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LexiBot</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef2ff;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 shadow bg-white fixed top-0 w-full z-50">
+    <div class="flex items-center space-x-3">
+      <i class="fa-solid fa-robot"></i>
+      <span class="text-xl font-bold">LexiBot</span>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-medium text-lg">
+      <li><a href="index.html" class="hover:text-red-500">Home</a></li>
+      <li><a href="loading-page.html" class="hover:text-red-500">Staff</a></li>
+      <li><a href="loading-page - supporto.html" class="hover:text-red-500">Support</a></li>
+      <li><a href="blog.html" class="hover:text-red-500">Blog</a></li>
+      <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" rel="noreferrer noopener" target="_blank" class="hover:text-red-500">Aggiungi bot</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="dropdown" class="mobile-menu md:hidden bg-white w-full text-center space-y-4 p-4 shadow">
+    <a href="#home" class="block">Home</a>
+    <a href="#staff" class="block">Staff</a>
+    <a href="#blog" class="block">Blog</a>
+    <a href="#collabs" class="block">Aggiungi bot</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-28" data-aos="fade-up">
+    <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl">
+      <div>
+        <h1 class="text-5xl md:text-6xl font-extrabold">
+          <span class="text-red-500">LexiBot</span> <br>
+          <span class="text-gray-800">One Bot More , Ten Less</span>
+        </h1>
+        <p class="mt-4 text-lg text-gray-700">
+          LexiBot,<br>è il bot multifunzione più utile in italia.
+        </p>
+
+        <!-- Aggiungi Bot Button -->
+        <div data-aos="zoom-in" class="mt-6">
+          <button id="addBotBtn"
+            class="bg-gradient-to-r from-red-500 to-yellow-400 hover:from-yellow-400 hover:to-red-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            <i class="fas fa-plus-circle mr-2"></i><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" rel="noreferrer noopener" target="_blank" style="color: #ffff;"> Aggiungi Bot</a>
+          </button>
+        </div>
+      </div>
+
+      <img src="Logodelbotlesbico.png"
+        class="w-72 md:w-96 animate__animated animate__fadeInRight" alt="LexiBot Logo">
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" class="back-to-top bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition duration-300">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <footer class="bg-[#1a1a1d] text-gray-300 py-12 px-6" style="background: #1a1a1d;">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-sm" >
+    <!-- Info -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Info</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Server di Supporto</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" class="hover:text-white transition" rel="noopener noreferrer" target="_blank">Invita bot</a></li>
+        <li><a href="loading-page.html" class="hover:text-white transition">Staff</a></li>
+        <li><a href="tds.html" class="hover:text-white transition">Termini di Servizio</a></li>
+      </ul>
+    </div>
+
+    <!-- Other -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Other</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+        <li><a href="loading-page.html" class="hover:text-white transition">Staff</a></li>
+        <li><a href="https://discord.com/oauth2/authorize?client_id=1358464588970066281" class="hover:text-white transition">aggiungi bot</a></li>
+        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Utility -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2 border-b-2 border-blue-500 w-fit pb-1">Sito sviluppato da:</h3>
+      <ul class="space-y-2 mt-2">
+        <li><a href="#" class="hover:text-white transition">Tahmid</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+    &copy; LexiBot 2025
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const dropdown = document.getElementById('dropdown');
+
+    menuBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+      anime({ targets: '#dropdown', opacity: [0, 1], duration: 300, easing: 'easeInOutQuad' });
+    });
+
+    // Scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Animate Aggiungi Bot Button
+    anime({
+      targets: '#addBotBtn',
+      translateY: [-30, 0],
+      opacity: [0, 1],
+      delay: 500,
+      duration: 1000,
+      easing: 'easeOutElastic(1, .8)'
+    });
+  </script>
+</body>
+</html>
